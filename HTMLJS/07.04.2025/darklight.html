@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            transition: all .2s ease-in-out;
+        }
+    </style>
+    <script> 
+    function darkmode(){
+        document.getElementById("title").style.color="white"; //id'si title olanın rengini beyaz yapar.
+        document.getElementById("text").style.color="white"; //id'si text olanın rengini beyaz yapar.
+        document.getElementsByTagName("body")[0].style.backgroundColor="black"; //etiketi olan bodynin rengini siyah yapar.
+    }  
+    function lightmode(){
+        document.getElementById("title").style.color="#000"; //id'si title olanın rengini siyah yapar.
+        document.getElementById("text").style.color="#000"; //id'si text olanın rengini siyah yapar.
+        document.getElementsByTagName("body")[0].style.backgroundColor="#fff"; // etiketi olan body'nin rengini beyaz yapar.
+    }    
+    </script>
+</head>
+<body>
+    <button onclick="darkmode()">Gece modu</button>
+    <button onclick="lightmode()">Gündüz modu</button>
+    <h1 id="title">11 A bilişim Sinifi</h1>
+    <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, tempora.</p>
+</body>
+</html>

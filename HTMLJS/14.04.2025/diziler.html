@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sehirler=["kocaeli","izmir","muğla","tokat"];
+        //console.log(sehirler);
+        console.log(sehirler[1]);
+        sehirler[1] = "istanbul"; //izmir yerine istanbul ekler.
+        console.log(sehirler[1]);
+        sehirler.push("ordu");  //sonuna ordu elemanını ekler.
+        console.log(sehirler);
+        console.log("dizi uzunluğu: "+sehirler.length); //dizinin uzunluğunu ölçer.
+        sehirler.sort(); //diziyi alfabetik sıralar.
+        console.log(sehirler);
+        sehirler.reverse(); //diziyi tersten alfabetik sıralar.
+        console.log(sehirler);
+        sehirler.pop(); //dizinin son elemanını siler.
+        console.log(sehirler);
+        sehirler.shift(); //dizinin ilk elemanını siler.
+        console.log(sehirler);
+        sehirler.unshift("bursa");
+        console.log(sehirler); //dizinin ilk indexine veri ekler.
+        sehirler[sehirler.length]="deneme"; //dizinin sonuna veri ekler.
+        console.log(sehirler);
+        sehirler.splice(2,2); //silmek istiyorsak önce 2den başlıyor ve 2 tane siliniyor.
+        console.log(sehirler);
+    </script>
+</body>
+</html>

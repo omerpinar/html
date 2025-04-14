@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let tarih = new Date(); //let yeni değer döndürebilen parametre. yeni gün fonksiyonu.
+      let gun = tarih.getDay(); //gun = günü alarak tarihi yazdır.
+      console.log(gun);//gunu konsola yazdır.
+      switch (gun) {
+        //SWİTCH-CASE birden fazla koşullu ifadeye sahip olduğumuzda, doğru koşul geldiği zaman gerçekleşecek eylemi kullanıcıya aktaran ifade bütünüdür.
+        case 0:
+          console.log("Günlerden Pazar");
+          break;
+        case 1:
+          console.log("Günlerden Pazartesi");
+          break;
+        case 2:
+          console.log("Günlerden Salı");
+          break;
+        case 3:
+          console.log("Günlerden Çarşamba");
+          break;
+        case 4:
+          console.log("Günlerden Perşembe");
+          break;
+        case 5:
+          console.log("Günlerden Cuma");
+          break;
+        case 6:
+          console.log("Günlerden Cumartesi");
+          break;
+        default:
+            console.log("Beklenmedik bir hata oluştu");
+          break;
+      }
+    </script>
+  </body>
+</html>

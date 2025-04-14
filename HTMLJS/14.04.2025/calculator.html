@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+</head>
+<body>
+  <h2>4 İşlemli Hesap Makinesi</h2>
+
+  <input type="number" id="num1" placeholder="1. sayı">
+  <input type="number" id="num2" placeholder="2. sayı">
+  <br><br>
+
+  <button onclick="hesapla('+')">+</button>
+  <button onclick="hesapla('-')">-</button>
+  <button onclick="hesapla('*')">*</button>
+  <button onclick="hesapla('/')">/</button>
+
+  <h3>Sonuç: <span id="sonuc">0</span></h3>
+
+  <script>
+    function hesapla(islem) {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      let sonuc = 0;
+
+      if (isNaN(n1) || isNaN(n2)) {
+        alert("Lütfen iki sayı girin!");
+        return;
+      }
+
+      switch(islem) {
+        case '+':
+          sonuc = n1 + n2;
+          break;
+        case '-':
+          sonuc = n1 - n2;
+          break;
+        case '*':
+          sonuc = n1 * n2;
+          break;
+        case '/':
+          if(n2 === 0) {
+            alert("Sıfıra bölünemez!");
+            return;
+          }
+          sonuc = n1 / n2;
+          break;
+      }
+
+      document.getElementById("sonuc").innerHTML = sonuc;
+    }
+  </script>
+</body>
+</html>

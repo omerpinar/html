@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #kutu{
+            width: 500px; /*genişlik* 500px*/
+            height: 300px; /*yükseklik 300px*/
+            background-color: red; /*kutunun rengi değiştirilmeden önce kırmızı kalır*/
+            border: 4px solid #000; /*kutunun köşelerinde 4px genisliginde siyah çizgi*/
+            margin-bottom: 20px; /*aşağıdan 20px'lik boşluk bırakır*/
+            transition: all .3s ease-in-out; /*renk değiştirilmeden önce hepsi için 3sn'lik geçiş süresidir.*/
+        }
+    </style>
+    <script>
+        function change(color){ //rengi değiştirmek için function kullanılır.
+            document.getElementById("kutu").style.backgroundColor=color; //id'si kutu olan elementi bulur ve arkaplan rengini color değişkenine göre ayarlar.
+        }
+    </script>
+</head>
+<body>
+    <div id="kutu"></div> 
+    <button onclick="change('yellow')">Yellow</button> 
+    <button onclick="change('blue')">Blue</button>
+    <button onclick="change('green')">Green</button>
+    <button onclick="change('aqua')">Aqua</button>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="img/download.jpg"  id="resim" style="height: 250px;">
+    <script>
+        
+        let tarih = new Date(); //let yeni değer atanabilir.
+        // console.log(tarih.toLocaleTimeString());
+        let dakika = tarih.getMinutes(); //let yeni değer atanabilir.
+        let saat = tarih.getHours(); //let yeni değer atanabilir.
+        if(saat>=14){ //saat 14'e yada 14e eşit ise::
+            console.log("saat 14ten büyük resim gizlendi"); // konsola saat 14ten büyük resim gizlendi yazdır.
+            document.getElementById("resim").style.display="none"; //id'si resim olan görseli gizle.
+        }else{ //saat 14'e yada 14e eşit değilse::
+            console.log("saat 14ten büyük resim görüntülendi."); //konsola saat 14ten büyük resim görüntülendi yazdır.
+            document.getElementById("resim").style.display="block"; // id'si resim olan görseli göster.
+        }
+        console.log(dakika); //dakikayı yazdır. 
+        if(dakika%2==0){ //dakikanın modunu aldır. eşit ise::
+            console.log("Çift"); //çift yazdır.
+        }else{ //değilse::
+            console.log("tek"); //tek yazdır.
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const yil = 2025; //const yeni değer atanamaz.
+      let dtarihi = 2008; //let yeni değer atanabilir.
+      let sonuc = hesapla(dtarihi, yil); //let yeni değer atanabilir (sonuc) değeri değişebileceğinden dolayı.
+      function hesapla(x, y) { // y=2025 x=2008 bunu geri değer döndürebilir function olarak ayarlıyoruz.
+        return y-x;
+      }
+      console.log(sonuc); //sonucu consola yazdır.
+    </script>
+  </body>
+</html>

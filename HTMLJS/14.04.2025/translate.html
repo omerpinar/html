@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="" id="search" />
+    <button onclick="cevir()">Translate</button>
+    <div id="result"></div>
+    <script>
+      function cevir() {
+        let en = [ "apple","pen","pencil", "increase", "table", "picture", "value" ];
+        let tr = [ "elma", "t.kalem", "kalem", "arttır", "masa", "resim", "değer" ];
+        let search = document.getElementById("search").value;
+        if (search == "") {
+          document.getElementById("result").innerText = "Değer giriniz.";
+        } else {
+          let sayi = en.indexOf(search); //index numarasını buluyor.
+          if (sayi == -1) {
+            document.getElementById("result").innerHTML = //idsi result olanı al ve yazıyı yazdır.
+              "Aranılan değer dizide yoktur.";
+          }else{
+            document.getElementById("result").innerHTML=en[sayi]+"="+tr[sayi]; //ingilizce kelime = türkçe kelime
+          }
+
+        }
+      }
+    </script>
+  </body>
+</html>

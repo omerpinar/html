@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        transition: all .3s ease; /*aralarında geçiş yaparken 3sn'lik bir ara geçiş sağlanır.*/
+    }
+    input{
+        display: none; /*altta yazan labelları gizler ve sadece koyulan resimler gözükür*/
+    }
+    .resim
+    {
+        margin: 60px;
+        gap: 25px;
+    }
+    .resiminyo
+    {
+        margin-top: 30px;
+    }
+</style>
+</head>
+<body>
+    <input type="radio" name="mod" id="gece" onclick="mod()"><label for="gece"><img src="img/moon.png" style="height: 25px;" alt=""></label>
+    <input type="radio" name="mod" id="gunduz" onclick="mod()"><label for="gunduz"><img src="img/day-mode.png" style="height: 25px;" alt=""></label>
+    <img src="img/download.jpg" id="resim" style="height: 250px;" alt="">
+    <img src="img/123.jpg" id="resimn" style="height: 250px;" alt="">
+
+    <script>
+        function mod()
+        {
+            if(document.getElementById("gece").checked==true)
+        {
+            document.getElementsByTagName("body")[0].style.backgroundColor = "black";
+            document.getElementsByTagName("body")[0].style.color = "white";
+            document.getElementById("resim").style.display = "none";
+            document.getElementById("resimn").style.display = "block";
+        }
+        else
+        {
+            document.getElementsByTagName("body")[0].style.backgroundColor = "white";
+            document.getElementsByTagName("body")[0].style.color = "black";
+            document.getElementById("resim").style.display = "block";
+            document.getElementById("resimn").style.display = "none";
+        }
+        }
+    </script>
+</body>
+</html>

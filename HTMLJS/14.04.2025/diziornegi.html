@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="metin"> <button onclick="ekle()">Ekle</button>
+
+    <script>
+        let araclar=["vw","bmw","audi","porsche","skoda"];
+        function ekle()
+        {
+         let eklenecek=document.getElementById("metin").value;
+         if(eklenecek=="")
+         {
+            alert("boş bırakılamaz");
+         }
+         else
+         {
+            araclar.push(eklenecek);
+            console.log(araclar);
+         }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List App</title>
+    <style> 
+      * { /*sayfadaki herşeye uygulanır.*/
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container { /*container div'ine ayarlamalarını yapar.*/
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+      }
+      .box { /*box div'ine ayarlamalarını yapar.*/
+        width: 600px;
+      }
+      .header { /*header div'ine ayarlamalarını yapar.*/
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        border-radius: 8px;
+        border: 1px solid #000;
+        margin-bottom: 20px;
+        margin-top: 25px;
+      }
+      #input { /*input koduna ayarlamalarını yapar.*/
+        height: 35px;
+        border: none;
+        border-bottom: 1px solid #000;
+        outline: 0px;
+        width: 65%;
+        padding-left: 10px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .btn-grad { /*buttonun rengini geçişli yapar. //netten alınıyor bu kod.*/
+        background-image: linear-gradient(
+          to right,
+          #314755 0%,
+          #26a0da 51%,
+          #314755 100%
+        );
+      }
+      .btn-grad { /*buttonun classına değişiklikleri yapar.*/
+        margin: 10px;
+        padding: 15px 25px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .btn-grad:hover { /*button classının üstünde gelindiğinde değişiklikleri uygular.*/
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+      }
+      #todolist{ /*todolist'e ayarlamalarını yapar.*/
+        font-size: 25px;
+        margin-left: 20px;
+        
+      }
+      #todolist > .list-item{ /*todolist'in içindeki listenin elemanlarına ayarlamalarını yapar.*/
+        margin: 10px 0px; /* itemlerin arasına yukarıdan 10px boşluk bırakır.*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="header">
+          <input type="text" id="input" placeholder="Yapılacak işi giriniz." /> 
+          <button class="btn-grad" onclick="gonder()">Gönder</button>
+        </div>
+        <div class="todos">
+          <ul id="todolist">
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+        function gonder(){ //onclick'de ne yazdıysak onu yazıyoruz.
+            let input = document.getElementById("input").value; //id'si input olanın değerini value'a göre değiştir.
+            console.log(input); //input değerini yazdır.
+            document.getElementById("todolist").innerHTML+='<li class="list-item">'+input+'</li>'; //id'si todolist olanın listenin itemi gibi yazdır.
+            document.getElementById("input").value=""; //yazı girilmediğinde sadece listeye . koyar. ve ondan değer boştur.
+            document.getElementById("input").focus(); //todolist'i etkin öge olarak ayarlar.
+        }
+    </script>
+  </body>
+</html>

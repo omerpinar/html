@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onmouseover="degistir('img/1.jpg')">resim 1</button> 
+    <button onmouseover="degistir('img/2.jpg')">resim 2</button>
+    <button onmouseover="degistir('img/3.jpg')">resim 3</button> <br><br>
+    <img src="img/1.jpg" style="height: 500px;">
+    <img src="img/1.jpg" style="height: 500px;">
+
+    <script> 
+        function degistir(par){ //onmouseover'a ne yazdıysak function'a da onu yazıyoruz. (par) butona yazılan resmin yoludur.
+            console.log(par); //çıkan değeri göster.
+            document.getElementsByTagName("img")[1].src=par; //listedeki 2.değeri gösterir ve resmin kaynağını değiştirir.
+        }
+    </script>
+</body>
+</html>

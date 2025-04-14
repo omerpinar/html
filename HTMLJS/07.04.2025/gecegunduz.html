@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            transition: all .3s ease; /*aralarında geçiş yaparken 3sn'lik bir ara geçiş sağlanır.*/
+        }
+        input{
+            display: none; /*altta yazan labelları gizler ve sadece koyulan resimler gözükür*/
+        }
+        
+    </style>
+</head>
+<body> 
+    <input type="radio" name="mod" id="gece" onclick="mod()"><label for="gece"><img src="img/moon.png" style="height: 25px;" alt=""></label>
+    <input type="radio" name="mod" id="gunduz" onclick="mod()"><label for="gunduz"><img src="img/day-mode.png" style="height: 25px;" alt=""></label>
+    <img src="img/download.jpg" class="resim" style="height: 250px;" alt="">
+    <h1>hi!</h1> 
+    <p>dark and light mode example</p>
+<script>
+    function mod(){ //onclick'e ne yazdıysak function'a da onu yazıyoruz
+        if(document.getElementById("gece").checked==true) //id'si gece olanı check et doğru ise::
+        {
+            document.getElementsByTagName("body")[0].style.backgroundColor="#000";  //body'i siyah yap
+            document.getElementsByTagName("body")[0].style.color="#fff";  //yazı rengini beyaz yap
+        } 
+        else //id'si gece değilse / gündüz ise::
+        {
+            document.getElementsByTagName("body")[0].style.backgroundColor="#fff"; //body'i beyaz yap
+            document.getElementsByTagName("body")[0].style.color="#000"; //yazı rengini siyah yap
+        }
+    }
+</script>
+</body>
+</html>
