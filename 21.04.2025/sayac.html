@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="azalt()">Azalt</button>
+    <span id="sayi" style="margin: 0px 15px;">0</span>
+    <button onclick="arttir()">Arttır</button>
+    <script>
+        function azalt()
+        {
+            let deger = parseInt(document.getElementById("sayi").innerText);
+            console.log(deger);
+            document.getElementById("sayi").innerText--;
+        }
+        function arttir()
+        {
+            document.getElementById("sayi").innerText++;
+        }
+    </script>
+</body>
+</html>
