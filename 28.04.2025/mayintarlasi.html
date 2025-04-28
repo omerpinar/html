@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+ <style>
+    .satir{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70px;
+    }
+    .sutun{
+        height:70px;
+        width: 70px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    img{
+        height: 50px;
+    }
+ </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <form>
+                <div class="mb-3">
+                  <label for="tahta" class="form-label">Mayın Tahtası</label>
+                  <input type="text" class="form-control" id="tahta">
+                 </div>
+                
+                <button type="button" class="btn btn-primary" onclick="olustur()">Oluştur</button>
+              </form>
+            <div class="sonuc mt-3" id="sonuc" >
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        function olustur(){
+            document.getElementById("sonuc").innerHTML=""
+            let tahta = document.getElementById("tahta").value;
+            for(let i = 0;i<tahta;i++){
+                document.getElementById("sonuc").innerHTML+="<div class='satir'></div>";
+                for(let j=0;j<tahta;j++){
+                    document.getElementsByClassName("satir")[i].innerHTML+="<div class='sutun'></div>"
+                }
+            }
+            let mayin= document.getElementsByClassName("sutun");
+            for(let a = 0;a<tahta;a++){
+                document.getElementsByClassName("sutun")[Math.floor(Math.random()*mayin.length)].innerHTML="<img src='mayin.png'/>"
+            }
+        }
+      </script>
+</body>
+</html>
