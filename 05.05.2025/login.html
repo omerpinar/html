@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3" id="user">
+                      <label for="username" class="form-label">Username</label>
+                      <input type="text" class="form-control" id="username" onkeyup="ukontrol(this)" >
+                      <div id="uHata" class="form-text"></div>
+                    </div>
+                    <div class="mb-3 d-none" id="pass">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" onkeyup="pkontrol(this)">
+                    </div>
+                    
+            <button type="button" class="btn btn-primary d-none" id="login">Login</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const ADMIN = "admin";
+        const PASS = "123456";
+        function ukontrol(par){
+            let username = par.value
+          if(username==ADMIN){
+            //password alanı göster
+            document.getElementById("pass").classList.remove("d-none");
+            document.getElementById("pass").classList.add("d-block");
+            //başarılı simgesi ekle
+            document.getElementById("username").classList.remove("is-invalid")
+            document.getElementById("username").classList.add("is-valid")
+
+          }
+          else{
+            document.getElementById("pass").classList.remove("d-block");
+            document.getElementById("pass").classList.add("d-none");
+            //şifre hatalıysa validation kısmı
+            document.getElementById("username").classList.remove("is-valid")
+            document.getElementById("username").classList.add("is-invalid")
+          }
+
+        }
+   function pkontrol(par){
+    let password = par.value
+    if(password==PASS){
+        document.getElementById("login").classList.remove("d-none");
+        document.getElementById("login").classList.add("d-block");
+        //başarılı simgesi ekle
+        document.getElementById("password").classList.remove("is-invalid")
+        document.getElementById("password").classList.add("is-valid")
+    }else{
+        document.getElementById("password").classList.remove("is-valid")
+        document.getElementById("password").classList.add("is-invalid")
+    }
+   }
+   </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .kutu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+        width: 400px;
+        flex-direction: column;
+      }
+      #ilce {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="kutu">
+          <select
+            class="form-select form-select-lg mb-3"
+            id="il"
+            onchange="ilbul(this)"
+          >
+            <option selected value="0">Lütfen bir il seçiniz.</option>
+            <option value="34">İstanbul</option>
+            <option value="41">Kocaeli</option>
+            <option value="6">Ankara</option>
+          </select>
+
+          <select
+            class="form-select form-select-lg mb-3"
+            id="ilce"
+          >
+            <option value="0">Lütfen bir ilçe seçiniz.</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <script>
+      const kocaeliIlceleri = [
+        "İzmit",
+        "Gebze",
+        "Darıca",
+        "Çayırova",
+        "Körfez",
+        "Derince",
+        "Gölcük",
+        "Başiskele",
+        "Kartepe",
+        "Karamürsel",
+        "Kandıra",
+        "Dilovası",
+      ];
+      const ankaraIlceleri = [
+        "Altındağ",
+        "Çankaya",
+        "Etimesgut",
+        "Keçiören",
+        "Mamak",
+        "Sincan",
+        "Yenimahalle",
+        "Akyurt",
+        "Ayaş",
+        "Bala",
+        "Beypazarı",
+        "Çamlıdere",
+        "Çubuk",
+        "Elmadağ",
+        "Evren",
+        "Gölbaşı",
+        "Güdül",
+        "Haymana",
+        "Kahramankazan",
+        "Kalecik",
+        "Kızılcahamam",
+        "Nallıhan",
+        "Polatlı",
+        "Pursaklar",
+        "Şereflikoçhisar",
+      ];
+      const istanbulIlceleri = [
+        "Adalar",
+        "Arnavutköy",
+        "Ataşehir",
+        "Avcılar",
+        "Bağcılar",
+        "Bahçelievler",
+        "Bakırköy",
+        "Başakşehir",
+        "Bayrampaşa",
+        "Beşiktaş",
+        "Beykoz",
+        "Beylikdüzü",
+        "Beyoğlu",
+        "Büyükçekmece",
+        "Çatalca",
+        "Çekmeköy",
+        "Esenler",
+        "Esenyurt",
+        "Eyüpsultan",
+        "Fatih",
+        "Gaziosmanpaşa",
+        "Güngören",
+        "Kadıköy",
+        "Kağıthane",
+        "Kartal",
+        "Küçükçekmece",
+        "Maltepe",
+        "Pendik",
+        "Sancaktepe",
+        "Sarıyer",
+        "Şile",
+        "Şişli",
+        "Sultanbeyli",
+        "Sultangazi",
+        "Tuzla",
+        "Ümraniye",
+        "Üsküdar",
+        "Zeytinburnu",
+      ];
+      function ilceolustur(par) {
+        document.getElementById("ilce").innerHTML = "";
+        for (let i = 0; i < par.length; i++) {
+          document.getElementById("ilce").innerHTML +=
+            " <option >" + par[i] + "</option>";
+        }
+      }
+      function ilbul(par) {
+        if (par.value == 0) {
+          console.log("Lütfen Seçim yapınız.");
+          document.getElementById("ilce").style.display = "none";
+        } else {
+          document.getElementById("ilce").style.display = "block";
+
+          switch (par.value) {
+            case "41":
+              console.log("seçilen il kocaeli");
+              ilceolustur(kocaeliIlceleri);
+              break;
+            case "34":
+              console.log("seçilen il istanbul");
+             ilceolustur(istanbulIlceleri);
+              break;
+            case "6":
+              console.log("seçilen il ankara");
+              ilceolustur(ankaraIlceleri);
+              break;
+
+            default:
+              console.log("beklenmedik bir hata oluştu");
+              break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

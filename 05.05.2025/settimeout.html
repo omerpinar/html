@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="download.jpg" id="resim">
+    <p id="hata">giriş hatalı</p>
+    <script>
+        setTimeout(() => {
+            document.getElementById("hata").style.display="none";
+        }, 3000);
+        
+        setTimeout(() => {
+            document.getElementById("hata").style.display="block";
+        }, 7000);
+    </script>
+</body>
+</html>

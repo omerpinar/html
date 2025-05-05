@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+          <div class="kutu">
+            <select
+              class="form-select form-select-lg mb-3"
+              id="il"
+              onchange="ilbul(this)"
+            >
+              <option selected value="0">Lütfen bir marka seçiniz.</option>
+              <option value="34">Audi</option>
+              <option value="41">Porsche</option>
+              <option value="6">Vw</option>
+            </select>
+  
+            <select
+              class="form-select form-select-lg mb-3"
+              id="ilce"
+            >
+              <option value="0">Lütfen bir model seçiniz.</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <script>
+        const audiModelleri = [
+        "A1",
+        "A3",
+        "A5",
+        "A8",
+      ];
+      const porscheModelleri = [
+        "Macan",
+        "Cayenne",
+        "Cayman",
+       
+      ];
+      const vwModelleri = [
+        "Taigo",
+        "T-Cross",
+        "Passat",
+        "Touareg",
+        "Tiguan",
+        "Golf",
+        "Polo",
+        "ID-4",
+        "ID-5",
+      ];
+      function ilceolustur(par) {
+        document.getElementById("ilce").innerHTML = "";
+        for (let i = 0; i < par.length; i++) {
+          document.getElementById("ilce").innerHTML +=
+            " <option >" + par[i] + "</option>";
+        }
+      }
+      function ilbul(par) {
+        if (par.value == 0) {
+          console.log("Lütfen Seçim yapınız.");
+          document.getElementById("ilce").style.display = "none";
+        } else {
+          document.getElementById("ilce").style.display = "block";
+
+          switch (par.value) {
+            case "41":
+              console.log("seçilen marka porsche");
+              ilceolustur(porscheModelleri);
+              break;
+            case "34":
+              console.log("seçilen marka audi");
+             ilceolustur(audiModelleri);
+              break;
+            case "6":
+              console.log("seçilen marka vw");
+              ilceolustur(vwModelleri);
+              break;
+
+            default:
+              console.log("beklenmedik bir hata oluştu");
+              break;
+          }
+        }
+      }
+      </script>
+</body>
+</html>
