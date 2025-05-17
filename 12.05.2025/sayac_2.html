@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #kare{
+            width: 400px;
+            height: 400px;
+            border: 10px solid black;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="range" id="sayi" oninput="yuvarla(this)" >
+    <!-- bir slider stick var. kaydırıldığında yuvarla(this) fonk. çalışıyor. -->
+    <br>
+<div id="kare"></div>
+<script>
+    function yuvarla(par){
+        console.log(par.value) //Slider'ın değerini (par.value) konsola yazdırır.
+        document.getElementById("kare").style.borderRadius=par.value+"px"; //karenin border-radius özelliğini bu değere göre ayarlar.
+    }
+</script>
+</body>
+</html>

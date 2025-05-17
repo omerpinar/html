@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <input type="color" id="color" oninput="color()"> 
+    <!-- sayfada özel bir renk şablonu oluşturur -->
+    <p>Choose Color</p>
+    <script>
+        function color() //renk değiştirme fonksiyonu
+        { 
+            let renk = document.getElementById("color").value; //renk değerini alır.
+            document.getElementById("body").style.backgroundColor=renk; //sayfayı seçilen renge ayarlar.
+        }
+    </script>
+</body>
+</html>

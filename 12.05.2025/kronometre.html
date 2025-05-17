@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body    
+        {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="sayi">
+    <button onclick="start()">Start</button>
+    <div id="sonuc"></div>
+    <script>
+        function start(){
+            let sayi = document.getElementById("sayi").value;//sayının değerini alır.
+            if(sayi=="")//sayı girilmediyse::
+            { 
+                alert("bu alan boş bırakılamaz"); //bu uyarıyı verir.
+            }
+            else //sayı girildiyse::
+            {  
+                let sayac = setInterval(() => { //sayi değerini saniyede 1er eksiltir.
+                    const dakika = Math.floor(sayi/60); //dakikayı hesaplamak için kullanılır.
+                    const saniye= sayi%60; //saniyeyi hesaplamak için kullanılır.        
+                    document.getElementById("sonuc").innerText=`${dakika} : ${saniye}`; //dakikayı ve saniyeyi yazdırır.
+                    if(sayi<=0){ //sayı 0'a eşit veya küçükse::
+                        clearInterval(sayac); //sayacı sıfırlar.
+                    }
+                    sayi-- //sayacı birer birer eksiltir.
+                }, 1000);                
+            }
+        }
+    </script>
+</body>
+</html>
